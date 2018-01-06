@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://static.oschina.net/uploads/space/2017/0906/225857_yB3f_3249170.png">
 <meta property="og:image" content="https://static.oschina.net/uploads/space/2017/0906/225917_sOw7_3249170.png">
 <meta property="og:image" content="https://static.oschina.net/uploads/space/2017/0907/094525_Q8K3_3249170.png">
-<meta property="og:updated_time" content="2018-01-06T14:44:18.604Z">
+<meta property="og:updated_time" content="2018-01-06T14:48:04.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring Cloud学习：01服务注册及发现（Eureka）">
 <meta name="twitter:description" content="Spring Cloud 是一个基于 Spring Boot 实现的云应用开发工具，它为基于 JVM 的云应用开发中的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决    策竞选、分布式会话和集群状态管理等操作提供了一种简单的开发方式。 对于服务注册和发现会用到 Spring Cloud Netflix，该项目是 Spring Cloud 的子项目之一，主要内容是对 Netfl">
@@ -319,9 +319,10 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableEurekaClient</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OneServiceApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(OneServiceApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>3.添加Eureka Client配置信息。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">    port:</span> <span class="number">8762</span></span><br><span class="line"></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">    client:</span></span><br><span class="line"><span class="attr">      serviceUrl:</span></span><br><span class="line"><span class="attr">        defaultZone:</span> <span class="attr">http://localhost:8761/eureka/</span></span><br><span class="line"></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">    application:</span></span><br><span class="line"><span class="attr">      name:</span> <span class="string">one-service</span> <span class="comment">#指明应用名称（服务与服务相互调用根据name属性）</span></span><br></pre></td></tr></table></figure>
-<p>2.4 启动工程，打开注册服务中心，发现已经存在一个服务。</p>
-<p><img src="https://static.oschina.net/uploads/space/2017/0907/094525_Q8K3_3249170.png" alt="eureka-05"><br>可以使用浏览器访问 <a href="http://localhost:8762/one" target="_blank" rel="noopener">http://localhost:8762/one</a>，返回测试信息。</p>
-<h4 id="本文源码下载地址："><a href="#本文源码下载地址：" class="headerlink" title="本文源码下载地址："></a>本文源码下载地址：</h4><p><a href="https://github.com/laravelshao/spring-cloud-learning/tree/master/setion01-eureka" target="_blank" rel="noopener">https://github.com/laravelshao/spring-cloud-learning/tree/master/setion01-eureka</a></p>
+<p>4.启动工程，打开注册服务中心，发现已经存在一个服务。</p>
+<p><img src="https://static.oschina.net/uploads/space/2017/0907/094525_Q8K3_3249170.png" alt="eureka-05"></p>
+<p>可以使用浏览器访问 <a href="http://localhost:8762/one" target="_blank" rel="noopener">http://localhost:8762/one</a>，返回测试信息。</p>
+<h5 id="本文源码下载地址："><a href="#本文源码下载地址：" class="headerlink" title="本文源码下载地址："></a>本文源码下载地址：</h5><p><a href="https://github.com/laravelshao/spring-cloud-learning/tree/master/setion01-eureka" target="_blank" rel="noopener">https://github.com/laravelshao/spring-cloud-learning/tree/master/setion01-eureka</a></p>
 
       
     </div>
