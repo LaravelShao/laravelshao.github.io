@@ -17,25 +17,25 @@
   
   
   <title>Spring Cloud学习：01服务注册及发现（Eureka） | 寒武没有纪</title>
-  <meta name="description" content="Spring Cloud 是一个基于 Spring Boot 实现的云应用开发工具，它为基于 JVM 的云应用开发中的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决    策竞选、分布式会话和集群状态管理等操作提供了一种简单的开发方式。  对于服务注册和发现会用到 Spring Cloud Netflix，该项目是 Spring Cloud 的子项目之一，主要内容是对 Net">
+  <meta name="description" content="Spring Cloud 是一个基于 Spring Boot 实现的云应用开发工具，它为基于 JVM 的云应用开发中的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决    策竞选、分布式会话和集群状态管理等操作提供了一种简单的开发方式。 对于服务注册和发现会用到 Spring Cloud Netflix，该项目是 Spring Cloud 的子项目之一，主要内容是对 Netfl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring Cloud学习：01服务注册及发现（Eureka）">
-<meta property="og:url" content="http://yoursite.com/2018/01/06/spring-cloud-learning-01-eureka/index.html">
+<meta property="og:url" content="https://laravelshao.github.io/2018/01/06/spring-cloud-learning-01-eureka/index.html">
 <meta property="og:site_name" content="寒武没有纪">
-<meta property="og:description" content="Spring Cloud 是一个基于 Spring Boot 实现的云应用开发工具，它为基于 JVM 的云应用开发中的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决    策竞选、分布式会话和集群状态管理等操作提供了一种简单的开发方式。  对于服务注册和发现会用到 Spring Cloud Netflix，该项目是 Spring Cloud 的子项目之一，主要内容是对 Net">
+<meta property="og:description" content="Spring Cloud 是一个基于 Spring Boot 实现的云应用开发工具，它为基于 JVM 的云应用开发中的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决    策竞选、分布式会话和集群状态管理等操作提供了一种简单的开发方式。 对于服务注册和发现会用到 Spring Cloud Netflix，该项目是 Spring Cloud 的子项目之一，主要内容是对 Netfl">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://static.oschina.net/uploads/space/2017/0906/212707_LkXI_3249170.png">
 <meta property="og:image" content="https://static.oschina.net/uploads/space/2017/0906/212829_7N5a_3249170.png">
 <meta property="og:image" content="https://static.oschina.net/uploads/space/2017/0906/225857_yB3f_3249170.png">
 <meta property="og:image" content="https://static.oschina.net/uploads/space/2017/0906/225917_sOw7_3249170.png">
 <meta property="og:image" content="https://static.oschina.net/uploads/space/2017/0907/094525_Q8K3_3249170.png">
-<meta property="og:updated_time" content="2018-01-06T14:09:58.019Z">
+<meta property="og:updated_time" content="2018-01-06T14:11:40.034Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring Cloud学习：01服务注册及发现（Eureka）">
-<meta name="twitter:description" content="Spring Cloud 是一个基于 Spring Boot 实现的云应用开发工具，它为基于 JVM 的云应用开发中的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决    策竞选、分布式会话和集群状态管理等操作提供了一种简单的开发方式。  对于服务注册和发现会用到 Spring Cloud Netflix，该项目是 Spring Cloud 的子项目之一，主要内容是对 Net">
+<meta name="twitter:description" content="Spring Cloud 是一个基于 Spring Boot 实现的云应用开发工具，它为基于 JVM 的云应用开发中的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决    策竞选、分布式会话和集群状态管理等操作提供了一种简单的开发方式。 对于服务注册和发现会用到 Spring Cloud Netflix，该项目是 Spring Cloud 的子项目之一，主要内容是对 Netfl">
 <meta name="twitter:image" content="https://static.oschina.net/uploads/space/2017/0906/212707_LkXI_3249170.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2018/01/06/spring-cloud-learning-01-eureka/index.html">
+  <link rel="canonical" href="https://laravelshao.github.io/2018/01/06/spring-cloud-learning-01-eureka/index.html">
   
     <link rel="alternate" href="/atom.xml" title="寒武没有纪" type="application/atom+xml">
   
@@ -299,14 +299,9 @@
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <ul>
-<li><p>Spring Cloud 是一个基于 Spring Boot 实现的云应用开发工具，它为基于 JVM 的云应用开发中的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决    策竞选、分布式会话和集群状态管理等操作提供了一种简单的开发方式。</p>
-</li>
-<li><p>对于服务注册和发现会用到 Spring Cloud Netflix，该项目是 Spring Cloud 的子项目之一，主要内容是对 Netflix 公司一系列开源产品的包装，它为 Spring Boot 应用提供了自配置的 Netflix OSS 整合。通过一些简单的注解，开发者就可以快速的在应用中配置一下常用模块并构建庞大的分布式系统。它主要提供的模块包括：服务发现（Eureka），断路器（Hystrix），智能路有（Zuul），客户端负载均衡（Ribbon）等。</p>
-</li>
-<li><p>先来学习下它的核心模块服务发现模块：Eureka，尝试搭建 Eureka Server（服务注册中心）及 Eureka Client（服务提供方）。</p>
-</li>
-</ul>
+        <p>Spring Cloud 是一个基于 Spring Boot 实现的云应用开发工具，它为基于 JVM 的云应用开发中的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决    策竞选、分布式会话和集群状态管理等操作提供了一种简单的开发方式。</p>
+<p>对于服务注册和发现会用到 Spring Cloud Netflix，该项目是 Spring Cloud 的子项目之一，主要内容是对 Netflix 公司一系列开源产品的包装，它为 Spring Boot 应用提供了自配置的 Netflix OSS 整合。通过一些简单的注解，开发者就可以快速的在应用中配置一下常用模块并构建庞大的分布式系统。它主要提供的模块包括：服务发现（Eureka），断路器（Hystrix），智能路有（Zuul），客户端负载均衡（Ribbon）等。</p>
+<p>先来学习下它的核心模块服务发现模块：Eureka，尝试搭建 Eureka Server（服务注册中心）及 Eureka Client（服务提供方）。</p>
 <h2 id="创建服务注册中心（Eureka-Server）"><a href="#创建服务注册中心（Eureka-Server）" class="headerlink" title="创建服务注册中心（Eureka Server）"></a>创建服务注册中心（Eureka Server）</h2><ol>
 <li>首先创建一个空的maven工程。</li>
 <li>工程右键创建Module，选择Spring Initializr。<br><img src="https://static.oschina.net/uploads/space/2017/0906/212707_LkXI_3249170.png" alt="eureka-01.png"><br>选择Cloud Discovery-&gt;Eureka Server，一直下一步就可以了。<br><img src="https://static.oschina.net/uploads/space/2017/0906/212829_7N5a_3249170.png" alt="eureka-02.png"></li>
@@ -333,7 +328,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2018/01/06/spring-cloud-learning-01-eureka/" title="Spring Cloud学习：01服务注册及发现（Eureka）" target="_blank" rel="external">http://yoursite.com/2018/01/06/spring-cloud-learning-01-eureka/</a>
+      <a href="https://laravelshao.github.io/2018/01/06/spring-cloud-learning-01-eureka/" title="Spring Cloud学习：01服务注册及发现（Eureka）" target="_blank" rel="external">https://laravelshao.github.io/2018/01/06/spring-cloud-learning-01-eureka/</a>
     </li>
     
     <li class="post-copyright-license">
