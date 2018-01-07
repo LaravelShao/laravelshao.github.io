@@ -18,7 +18,7 @@
   
   <title>Spring Cloud学习：03断路器（Hystrix） | 寒武没有纪</title>
   <meta name="description" content="Hystrix介绍Spring Cloud Hystrix是分布式系统处理超时和错误的机制，如下图所示，分布式系统中某个用户请求依赖A、H、I、P服务。  当此请求并发超过50的时候，服务I处理速度变慢，但是服务I还是被调用。   大量请求会阻塞在 Tomcat 服务器上，影响其它整个服务。在复杂的分布式架构的应用程序有很多的依赖，都会不可避免地在某些时候失败。高并发的依赖失败时如果没有隔离措施，">
-<meta name="keywords" content="Spring,Spring Cloud,Spring Boot,Hystrix,微服务">
+<meta name="keywords" content="Spring,Spring Cloud,微服务,Hystrix">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring Cloud学习：03断路器（Hystrix）">
 <meta property="og:url" content="http://laravelshao.com/2018/01/07/spring-cloud-learning-03-hystrix/index.html">
@@ -34,7 +34,7 @@
 <meta property="og:image" content="http://laravelshao.com/images/spring-cloud/hystrix-07.png">
 <meta property="og:image" content="http://laravelshao.com/images/spring-cloud/hystrix-08.png">
 <meta property="og:image" content="http://laravelshao.com/images/spring-cloud/hystrix-09.png">
-<meta property="og:updated_time" content="2018-01-07T08:21:37.813Z">
+<meta property="og:updated_time" content="2018-01-07T08:24:39.831Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring Cloud学习：03断路器（Hystrix）">
 <meta name="twitter:description" content="Hystrix介绍Spring Cloud Hystrix是分布式系统处理超时和错误的机制，如下图所示，分布式系统中某个用户请求依赖A、H、I、P服务。  当此请求并发超过50的时候，服务I处理速度变慢，但是服务I还是被调用。   大量请求会阻塞在 Tomcat 服务器上，影响其它整个服务。在复杂的分布式架构的应用程序有很多的依赖，都会不可避免地在某些时候失败。高并发的依赖失败时如果没有隔离措施，">
@@ -214,7 +214,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eureka/">Eureka</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Feign/">Feign</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hystrix/">Hystrix</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ribbon/">Ribbon</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Boot/">Spring Boot</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Cloud/">Spring Cloud</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微服务/">微服务</a><span class="tag-list-count">3</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eureka/">Eureka</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Feign/">Feign</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hystrix/">Hystrix</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ribbon/">Ribbon</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Cloud/">Spring Cloud</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微服务/">微服务</a><span class="tag-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -224,7 +224,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/Eureka/" style="font-size: 13px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 13px;">Feign</a> <a href="/tags/Hystrix/" style="font-size: 13px;">Hystrix</a> <a href="/tags/Ribbon/" style="font-size: 13px;">Ribbon</a> <a href="/tags/Spring/" style="font-size: 14px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 14px;">Spring Boot</a> <a href="/tags/Spring-Cloud/" style="font-size: 14px;">Spring Cloud</a> <a href="/tags/微服务/" style="font-size: 14px;">微服务</a>
+      <a href="/tags/Eureka/" style="font-size: 13px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 13px;">Feign</a> <a href="/tags/Hystrix/" style="font-size: 13px;">Hystrix</a> <a href="/tags/Ribbon/" style="font-size: 13px;">Ribbon</a> <a href="/tags/Spring/" style="font-size: 14px;">Spring</a> <a href="/tags/Spring-Cloud/" style="font-size: 14px;">Spring Cloud</a> <a href="/tags/微服务/" style="font-size: 14px;">微服务</a>
     </div>
   </div>
 
@@ -346,7 +346,7 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/Hystrix/">Hystrix</a>, <a class="article-tag-link" href="/tags/Spring/">Spring</a>, <a class="article-tag-link" href="/tags/Spring-Boot/">Spring Boot</a>, <a class="article-tag-link" href="/tags/Spring-Cloud/">Spring Cloud</a>, <a class="article-tag-link" href="/tags/微服务/">微服务</a>
+	<a class="article-tag-link" href="/tags/Hystrix/">Hystrix</a>, <a class="article-tag-link" href="/tags/Spring/">Spring</a>, <a class="article-tag-link" href="/tags/Spring-Cloud/">Spring Cloud</a>, <a class="article-tag-link" href="/tags/微服务/">微服务</a>
   </span>
 
 
