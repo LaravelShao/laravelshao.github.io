@@ -18,7 +18,7 @@
   
   <title>Spring Cloud学习：01服务注册及发现（Eureka） | 寒武没有纪</title>
   <meta name="description" content="Spring Cloud 是一个基于 Spring Boot 实现的云应用开发工具，它为基于 JVM 的云应用开发中的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决    策竞选、分布式会话和集群状态管理等操作提供了一种简单的开发方式。 对于服务注册和发现会用到 Spring Cloud Netflix，该项目是 Spring Cloud 的子项目之一，主要内容是对 Netfl">
-<meta name="keywords" content="Spring,Spring Cloud,Spring Boot,Eureka,微服务">
+<meta name="keywords" content="Spring,Spring Cloud,Spring Boot,微服务,Eureka">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring Cloud学习：01服务注册及发现（Eureka）">
 <meta property="og:url" content="http://laravelshao.com/2018/01/06/spring-cloud-learning-01-eureka/index.html">
@@ -30,7 +30,7 @@
 <meta property="og:image" content="http://laravelshao.com/images/spring-cloud/eureka-03.png">
 <meta property="og:image" content="http://laravelshao.com/images/spring-cloud/eureka-04.png">
 <meta property="og:image" content="http://laravelshao.com/images/spring-cloud/eureka-05.png">
-<meta property="og:updated_time" content="2018-01-07T07:56:11.852Z">
+<meta property="og:updated_time" content="2018-01-07T08:00:36.469Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring Cloud学习：01服务注册及发现（Eureka）">
 <meta name="twitter:description" content="Spring Cloud 是一个基于 Spring Boot 实现的云应用开发工具，它为基于 JVM 的云应用开发中的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决    策竞选、分布式会话和集群状态管理等操作提供了一种简单的开发方式。 对于服务注册和发现会用到 Spring Cloud Netflix，该项目是 Spring Cloud 的子项目之一，主要内容是对 Netfl">
@@ -383,7 +383,7 @@
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">    port:</span> <span class="number">8762</span></span><br><span class="line"></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">    client:</span></span><br><span class="line"><span class="attr">      serviceUrl:</span></span><br><span class="line"><span class="attr">        defaultZone:</span> <span class="attr">http://localhost:8761/eureka/</span></span><br><span class="line"></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">    application:</span></span><br><span class="line"><span class="attr">      name:</span> <span class="string">one-service</span> <span class="comment">#指明应用名称（服务与服务相互调用根据name属性）</span></span><br></pre></td></tr></table></figure>
 <p>4.启动工程，打开注册服务中心，发现已经存在一个服务。</p>
 <p><img src="/images/spring-cloud/eureka-05.png" alt="eureka-05.png"></p>
-<p>可以使用浏览器访问 <a href="http://localhost:8762/one，返回测试信息。" target="_blank" rel="noopener">http://localhost:8762/one，返回测试信息。</a></p>
+<p>可以使用浏览器访问 <a href="http://localhost:8762/one" target="_blank" rel="noopener">http://localhost:8762/one</a>，返回测试信息。</p>
 <h5 id="本文源码下载地址："><a href="#本文源码下载地址：" class="headerlink" title="本文源码下载地址："></a>本文源码下载地址：</h5><p><a href="https://github.com/laravelshao/spring-cloud-learning/tree/master/setion01-eureka" target="_blank" rel="noopener">https://github.com/laravelshao/spring-cloud-learning/tree/master/setion01-eureka</a></p>
 
       
