@@ -16,20 +16,27 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Hello World | 寒武没有纪</title>
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <title>Spring Cloud学习：03断路器（Hystrix） | 寒武没有纪</title>
+  <meta name="description" content="Hystrix介绍Spring Cloud Hystrix是分布式系统处理超时和错误的机制，如下图所示，分布式系统中某个用户请求依赖A、H、I、P服务。  当此请求并发超过50的时候，服务I处理速度变慢，但是服务I还是被调用。   大量请求会阻塞在 Tomcat 服务器上，影响其它整个服务。在复杂的分布式架构的应用程序有很多的依赖，都会不可避免地在某些时候失败。高并发的依赖失败时如果没有隔离措施，">
+<meta name="keywords" content="Spring,Spring Cloud,Spring Boot,微服务,Hystrix">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://laravelshao.com/2018/01/06/hello-world/index.html">
+<meta property="og:title" content="Spring Cloud学习：03断路器（Hystrix）">
+<meta property="og:url" content="http://laravelshao.com/2018/01/07/spring-cloud-learning-03-hystrix/index.html">
 <meta property="og:site_name" content="寒武没有纪">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="Hystrix介绍Spring Cloud Hystrix是分布式系统处理超时和错误的机制，如下图所示，分布式系统中某个用户请求依赖A、H、I、P服务。  当此请求并发超过50的时候，服务I处理速度变慢，但是服务I还是被调用。   大量请求会阻塞在 Tomcat 服务器上，影响其它整个服务。在复杂的分布式架构的应用程序有很多的依赖，都会不可避免地在某些时候失败。高并发的依赖失败时如果没有隔离措施，">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-06T07:57:23.183Z">
+<meta property="og:image" content="http://laravelshao.com/images/spring-cloud/hystrix-01.png">
+<meta property="og:image" content="http://laravelshao.com/images/spring-cloud/hystrix-02.png">
+<meta property="og:image" content="http://laravelshao.com/images/spring-cloud/hystrix-03.png">
+<meta property="og:image" content="http://laravelshao.com/images/spring-cloud/hystrix-04.png">
+<meta property="og:image" content="http://laravelshao.com/images/spring-cloud/hystrix-05.png">
+<meta property="og:updated_time" content="2018-01-07T07:45:45.234Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Spring Cloud学习：03断路器（Hystrix）">
+<meta name="twitter:description" content="Hystrix介绍Spring Cloud Hystrix是分布式系统处理超时和错误的机制，如下图所示，分布式系统中某个用户请求依赖A、H、I、P服务。  当此请求并发超过50的时候，服务I处理速度变慢，但是服务I还是被调用。   大量请求会阻塞在 Tomcat 服务器上，影响其它整个服务。在复杂的分布式架构的应用程序有很多的依赖，都会不可避免地在某些时候失败。高并发的依赖失败时如果没有隔离措施，">
+<meta name="twitter:image" content="http://laravelshao.com/images/spring-cloud/hystrix-01.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://laravelshao.com/2018/01/06/hello-world/index.html">
+  <link rel="canonical" href="http://laravelshao.com/2018/01/07/spring-cloud-learning-03-hystrix/index.html">
   
     <link rel="alternate" href="/atom.xml" title="寒武没有纪" type="application/atom+xml">
   
@@ -307,14 +314,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-hello-world" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-spring-cloud-learning-03-hystrix" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      Spring Cloud学习：03断路器（Hystrix）
     </h1>
   
 
@@ -322,12 +329,22 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2018/01/06/hello-world/" class="article-date">
-	  <time datetime="2018-01-06T07:57:23.183Z" itemprop="datePublished">2018-01-06</time>
+	<a href="/2018/01/07/spring-cloud-learning-03-hystrix/" class="article-date">
+	  <time datetime="2018-01-07T07:33:51.000Z" itemprop="datePublished">2018-01-07</time>
 	</a>
 </span>
         
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/Spring-Cloud/">Spring Cloud</a>
+  </span>
+
         
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/Hystrix/">Hystrix</a>, <a class="article-tag-link" href="/tags/Spring/">Spring</a>, <a class="article-tag-link" href="/tags/Spring-Boot/">Spring Boot</a>, <a class="article-tag-link" href="/tags/Spring-Cloud/">Spring Cloud</a>, <a class="article-tag-link" href="/tags/微服务/">微服务</a>
+  </span>
+
 
         
 	<span class="article-read hidden-xs">
@@ -338,21 +355,26 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/01/06/hello-world/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/01/07/spring-cloud-learning-03-hystrix/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="Hystrix介绍"><a href="#Hystrix介绍" class="headerlink" title="Hystrix介绍"></a>Hystrix介绍</h2><p>Spring Cloud Hystrix是分布式系统处理超时和错误的机制，如下图所示，分布式系统中某个用户请求依赖A、H、I、P服务。</p>
+<p><img src="/images/spring-cloud/hystrix-01.png" alt="hystrix-01.png"></p>
+<p>当此请求并发超过50的时候，服务I处理速度变慢，但是服务I还是被调用。</p>
+<p><img src="/images/spring-cloud/hystrix-02.png" alt="hystrix-02.png"></p>
+<p><img src="/images/spring-cloud/hystrix-03.png" alt="hystrix-03.png"></p>
+<p>大量请求会阻塞在 Tomcat 服务器上，影响其它整个服务。在复杂的分布式架构的应用程序有很多的依赖，都会不可避免地在某些时候失败。高并发的依赖失败时如果没有隔离措施，当前应用服务就有被拖垮的风险。</p>
+<p>Spring Cloud Hystrix 就是隔离措施的一种实现，可以设置在某种超时或者失败情形下断开依赖调用或者返回指定逻辑，从而提高分布式系统的稳定性。</p>
+<h2 id="测试Hystrix"><a href="#测试Hystrix" class="headerlink" title="测试Hystrix"></a>测试Hystrix</h2><h4 id="Ribbon使用Hystrix"><a href="#Ribbon使用Hystrix" class="headerlink" title="Ribbon使用Hystrix"></a>Ribbon使用Hystrix</h4><p>1.改造ribbon-service模块，在pom.xml文件中添加spring-cloud-starter-hystrix起步依赖：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-hystrix<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>2.在启动类上添加@EnableHystrix注解开启Hystrix断路器功能<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="meta">@EnableHystrix</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RibbonServiceApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@LoadBalanced</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> RestTemplate <span class="title">restTemplate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> RestTemplate();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(RibbonServiceApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3.在测试接口上添加@HystrixCommand注解为该方法添加断路器功能，使用fallbackMethod参数指定服务异常时的熔断方法，同时添加一个服务异常时调用的方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    RestTemplate restTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/one"</span>)</span><br><span class="line">    <span class="meta">@HystrixCommand</span>(fallbackMethod = <span class="string">"serviceError"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">one</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> restTemplate.getForObject(<span class="string">"http://ONE-SERVICE/one"</span>,String.class);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *服务异常调用方法</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">serviceError</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"service has error..."</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>4.启动服务注册中心、one-service、ribbon-service，服务正常时访问<a href="http://localhost:8764/one显示：" target="_blank" rel="noopener">http://localhost:8764/one显示：</a></p>
+<p><img src="/images/spring-cloud/hystrix-04.png" alt="hystrix-04.png">  </p>
+<p>关闭one-service服务，访问<a href="http://localhost:8764/one" target="_blank" rel="noopener">http://localhost:8764/one</a> 显示：</p>
+<p><img src="/images/spring-cloud/hystrix-05.png" alt="hystrix-05.png">      </p>
 
       
     </div>
@@ -362,7 +384,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://laravelshao.com/2018/01/06/hello-world/" title="Hello World" target="_blank" rel="external">http://laravelshao.com/2018/01/06/hello-world/</a>
+      <a href="http://laravelshao.com/2018/01/07/spring-cloud-learning-03-hystrix/" title="Spring Cloud学习：03断路器（Hystrix）" target="_blank" rel="external">http://laravelshao.com/2018/01/07/spring-cloud-learning-03-hystrix/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -410,10 +432,10 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2018/01/06/spring-cloud-learning-01-eureka/" title="Spring Cloud学习：01服务注册及发现（Eureka）"><i class="icon icon-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;上一篇</a>
-    </li>
     
+    <li class="next">
+      <a href="/2018/01/07/spring-cloud-learning-02-ribbon-feign/" title="Spring Cloud学习：02服务消费者（Ribbon&amp;Feign）">下一篇&nbsp;&nbsp;<i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
     
   </ul>
   
