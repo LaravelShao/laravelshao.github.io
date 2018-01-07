@@ -29,7 +29,7 @@
 <meta property="og:image" content="http://laravelshao.com/images/spring-cloud/ribbon-feign-02.png">
 <meta property="og:image" content="http://laravelshao.com/images/spring-cloud/ribbon-feign-03.png">
 <meta property="og:image" content="http://laravelshao.com/images/spring-cloud/ribbon-feign-04.png">
-<meta property="og:updated_time" content="2018-01-07T07:22:38.638Z">
+<meta property="og:updated_time" content="2018-01-07T07:30:33.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring Cloud学习：02服务消费者（Ribbon&amp;Feign）">
 <meta name="twitter:description" content="在微服务架构中，业务会拆分成一个独立的服务，服务与服务之间基于http restful进行通信。Spring Cloud有两种服务调用方式，一种是Ribbon+restTemplate，另一种是Feign。 Ribbon+restTemplateRibbon介绍Spring Cloud Ribbon 是基于 HTTP 和 TCP 的客户端负载均衡工具，基于 Netflix Ribbon 实现。通过">
@@ -376,8 +376,13 @@
 <p>②启动one-service 2个服务实例，端口分别为8762和 8763；</p>
 <p>③启动feign-service工程，端口为8765。</p>
 <p><img src="/images/spring-cloud/ribbon-feign-04.png" alt="ribbon-feign-04.png"></p>
-<p>7.浏览器多次访问<a href="http://localhost:8765/one" target="_blank" rel="noopener"></a>，交替出现以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">one-service test port:8762</span><br><span class="line">one-service test port:8763</span><br></pre></td></tr></table></figure></p>
-<h4 id="本文源码下载地址："><a href="#本文源码下载地址：" class="headerlink" title="本文源码下载地址："></a>本文源码下载地址：</h4>
+<p>7.浏览器多次访问<a href="http://localhost:8765/one" target="_blank" rel="noopener">http://localhost:8765/one</a>，交替出现以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">one-service test port:8762</span><br><span class="line">one-service test port:8763</span><br></pre></td></tr></table></figure></p>
+<h4 id="本文源码下载地址："><a href="#本文源码下载地址：" class="headerlink" title="本文源码下载地址："></a>本文源码下载地址：</h4><p><a href="https://github.com/laravelshao/spring-cloud-learning/tree/master/setion02-ribbon-feign" target="_blank" rel="noopener">https://github.com/laravelshao/spring-cloud-learning/tree/master/setion02-ribbon-feign</a></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://cloud.spring.io/spring-cloud-static/Dalston.SR4/multi/multi__spring_cloud_commons_common_abstractions.html#_spring_resttemplate_as_a_load_balancer_client" target="_blank" rel="noopener">Spring RestTemplate as a Load Balancer Client</a></p>
+<p><a href="http://cloud.spring.io/spring-cloud-static/Dalston.SR4/multi/multi_spring-cloud-feign.html" target="_blank" rel="noopener">How to Include Feign</a></p>
+<p><a href="http://blog.csdn.net/forezp/article/details/69788938" target="_blank" rel="noopener">方志朋-&gt;史上最简单的SpringCloud教程</a></p>
+<p><a href="http://blog.didispace.com/Spring-Cloud%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/" target="_blank" rel="noopener">翟永超-&gt;Spring Cloud基础教程</a> &amp; Spring Cloud微服务实战</p>
+
       
     </div>
     <div class="article-footer">
