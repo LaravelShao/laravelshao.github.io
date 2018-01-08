@@ -18,7 +18,7 @@
   
   <title>Spring Cloud学习：02服务消费者（Ribbon&amp;Feign） | 寒武没有纪</title>
   <meta name="description" content="在微服务架构中，业务会拆分成一个独立的服务，服务与服务之间基于http restful进行通信。Spring Cloud有两种服务调用方式，一种是Ribbon+restTemplate，另一种是Feign。 Ribbon+restTemplateRibbon介绍Spring Cloud Ribbon 是基于 HTTP 和 TCP 的客户端负载均衡工具，基于 Netflix Ribbon 实现。通过">
-<meta name="keywords" content="Spring,Spring Cloud,微服务,Ribbon,Feign">
+<meta name="keywords" content="Spring,Spring Cloud,Ribbon,Feign,微服务">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring Cloud学习：02服务消费者（Ribbon&amp;Feign）">
 <meta property="og:url" content="http://laravelshao.com/2018/01/07/spring-cloud-learning-02-ribbon-feign/index.html">
@@ -199,7 +199,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Cloud/">Spring Cloud</a><span class="category-list-count">3</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Spring-Cloud/">Spring Cloud</a><span class="category-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -209,7 +209,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eureka/">Eureka</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Feign/">Feign</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hystrix/">Hystrix</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ribbon/">Ribbon</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Cloud/">Spring Cloud</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微服务/">微服务</a><span class="tag-list-count">3</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eureka/">Eureka</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Feign/">Feign</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hystrix/">Hystrix</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ribbon/">Ribbon</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Cloud/">Spring Cloud</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zuul/">Zuul</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微服务/">微服务</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/路由网关/">路由网关</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -219,7 +219,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/Eureka/" style="font-size: 13px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 13px;">Feign</a> <a href="/tags/Hystrix/" style="font-size: 13px;">Hystrix</a> <a href="/tags/Ribbon/" style="font-size: 13px;">Ribbon</a> <a href="/tags/Spring/" style="font-size: 14px;">Spring</a> <a href="/tags/Spring-Cloud/" style="font-size: 14px;">Spring Cloud</a> <a href="/tags/微服务/" style="font-size: 14px;">微服务</a>
+      <a href="/tags/Eureka/" style="font-size: 13px;">Eureka</a> <a href="/tags/Feign/" style="font-size: 13px;">Feign</a> <a href="/tags/Hystrix/" style="font-size: 13px;">Hystrix</a> <a href="/tags/Ribbon/" style="font-size: 13px;">Ribbon</a> <a href="/tags/Spring/" style="font-size: 14px;">Spring</a> <a href="/tags/Spring-Cloud/" style="font-size: 14px;">Spring Cloud</a> <a href="/tags/Zuul/" style="font-size: 13px;">Zuul</a> <a href="/tags/微服务/" style="font-size: 14px;">微服务</a> <a href="/tags/路由网关/" style="font-size: 13px;">路由网关</a>
     </div>
   </div>
 
@@ -228,7 +228,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">5</span></li></ul>
     </div>
   </div>
 
@@ -240,6 +240,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Spring-Cloud/">Spring Cloud</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/01/08/spring-cloud-learning-04-zuul/" class="title">Spring Cloud学习：04路由网关（Zuul）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-01-08T02:51:46.000Z" itemprop="datePublished">2018-01-08</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
