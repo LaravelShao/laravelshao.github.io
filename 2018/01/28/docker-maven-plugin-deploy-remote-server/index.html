@@ -17,13 +17,13 @@
   
   
   <title>Docker Maven插件本地构建镜像发布至远程服务器 | 寒武没有纪</title>
-  <meta name="description" content="环境使用阿里云ECS服务器及Ubuntu 16.04进行测试 Ubuntu 16.04安装Docker1.安装步骤 step 1: 安装必要的一些系统工具，添加apt支持https的URLs(如不存在/usr/lib/apt/methods/https这个文件，先安装apt-transport-https包)sudo apt-get updatesudo apt-get -y install ap">
+  <meta name="description" content="环境使用阿里云ECS服务器及Ubuntu 16.04进行测试 Ubuntu 16.04安装Docker1.安装步骤 12345678910# step 1: 安装必要的一些系统工具，添加apt支持https的URLs(如不存在/usr/lib/apt/methods/https这个文件，先安装apt-transport-https包)sudo apt-get updatesudo apt-get">
 <meta name="keywords" content="Docker,Image">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker Maven插件本地构建镜像发布至远程服务器">
 <meta property="og:url" content="http://laravelshao.com/2018/01/28/docker-maven-plugin-deploy-remote-server/index.html">
 <meta property="og:site_name" content="寒武没有纪">
-<meta property="og:description" content="环境使用阿里云ECS服务器及Ubuntu 16.04进行测试 Ubuntu 16.04安装Docker1.安装步骤 step 1: 安装必要的一些系统工具，添加apt支持https的URLs(如不存在/usr/lib/apt/methods/https这个文件，先安装apt-transport-https包)sudo apt-get updatesudo apt-get -y install ap">
+<meta property="og:description" content="环境使用阿里云ECS服务器及Ubuntu 16.04进行测试 Ubuntu 16.04安装Docker1.安装步骤 12345678910# step 1: 安装必要的一些系统工具，添加apt支持https的URLs(如不存在/usr/lib/apt/methods/https这个文件，先安装apt-transport-https包)sudo apt-get updatesudo apt-get">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://laravelshao.com/images/docker/docker-maven-plugin-deploy-01.png">
 <meta property="og:image" content="http://laravelshao.com/images/docker/docker-maven-plugin-deploy-02.png">
@@ -37,10 +37,10 @@
 <meta property="og:image" content="http://laravelshao.com/images/docker/docker-maven-plugin-deploy-10.png">
 <meta property="og:image" content="http://laravelshao.com/images/docker/docker-maven-plugin-deploy-11.png">
 <meta property="og:image" content="http://laravelshao.com/images/docker/docker-maven-plugin-deploy-12.png">
-<meta property="og:updated_time" content="2018-01-28T10:14:16.807Z">
+<meta property="og:updated_time" content="2018-01-28T10:16:34.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker Maven插件本地构建镜像发布至远程服务器">
-<meta name="twitter:description" content="环境使用阿里云ECS服务器及Ubuntu 16.04进行测试 Ubuntu 16.04安装Docker1.安装步骤 step 1: 安装必要的一些系统工具，添加apt支持https的URLs(如不存在/usr/lib/apt/methods/https这个文件，先安装apt-transport-https包)sudo apt-get updatesudo apt-get -y install ap">
+<meta name="twitter:description" content="环境使用阿里云ECS服务器及Ubuntu 16.04进行测试 Ubuntu 16.04安装Docker1.安装步骤 12345678910# step 1: 安装必要的一些系统工具，添加apt支持https的URLs(如不存在/usr/lib/apt/methods/https这个文件，先安装apt-transport-https包)sudo apt-get updatesudo apt-get">
 <meta name="twitter:image" content="http://laravelshao.com/images/docker/docker-maven-plugin-deploy-01.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://laravelshao.com/2018/01/28/docker-maven-plugin-deploy-remote-server/index.html">
@@ -377,10 +377,7 @@
       
         <p>环境使用阿里云ECS服务器及Ubuntu 16.04进行测试</p>
 <h2 id="Ubuntu-16-04安装Docker"><a href="#Ubuntu-16-04安装Docker" class="headerlink" title="Ubuntu 16.04安装Docker"></a>Ubuntu 16.04安装Docker</h2><p>1.安装步骤</p>
-<h1 id="step-1-安装必要的一些系统工具，添加apt支持https的URLs-如不存在-usr-lib-apt-methods-https这个文件，先安装apt-transport-https包"><a href="#step-1-安装必要的一些系统工具，添加apt支持https的URLs-如不存在-usr-lib-apt-methods-https这个文件，先安装apt-transport-https包" class="headerlink" title="step 1: 安装必要的一些系统工具，添加apt支持https的URLs(如不存在/usr/lib/apt/methods/https这个文件，先安装apt-transport-https包)"></a>step 1: 安装必要的一些系统工具，添加apt支持https的URLs(如不存在/usr/lib/apt/methods/https这个文件，先安装apt-transport-https包)</h1><p>sudo apt-get update<br>sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common</p>
-<h1 id="step-2-安装GPG证书"><a href="#step-2-安装GPG证书" class="headerlink" title="step 2: 安装GPG证书"></a>step 2: 安装GPG证书</h1><p>curl -fsSL <a href="http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg" target="_blank" rel="noopener">http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg</a> | sudo apt-key add -</p>
-<h1 id="Step-3-写入软件源信息"><a href="#Step-3-写入软件源信息" class="headerlink" title="Step 3: 写入软件源信息"></a>Step 3: 写入软件源信息</h1><p>sudo add-apt-repository “deb [arch=amd64] <a href="http://mirrors.aliyun.com/docker-ce/linux/ubuntu" target="_blank" rel="noopener">http://mirrors.aliyun.com/docker-ce/linux/ubuntu</a> $(lsb_release -cs) stable”</p>
-<h1 id="Step-4-更新并安装Docker-CE"><a href="#Step-4-更新并安装Docker-CE" class="headerlink" title="Step 4: 更新并安装Docker-CE"></a>Step 4: 更新并安装Docker-CE</h1><p>sudo apt-get -y update<br>sudo apt-get -y install docker-ce</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># step 1: 安装必要的一些系统工具，添加apt支持https的URLs(如不存在/usr/lib/apt/methods/https这个文件，先安装apt-transport-https包)</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common</span><br><span class="line"># step 2: 安装GPG证书</span><br><span class="line">curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</span><br><span class="line"># Step 3: 写入软件源信息</span><br><span class="line">sudo add-apt-repository &quot;deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable&quot;</span><br><span class="line"># Step 4: 更新并安装Docker-CE</span><br><span class="line">sudo apt-get -y update</span><br><span class="line">sudo apt-get -y install docker-ce</span><br></pre></td></tr></table></figure>
 <p>2.安装后查看版本信息</p>
 <p>docker -v</p>
 <p><img src="/images/docker/docker-maven-plugin-deploy-01.png" alt="docker-maven-plugin-deploy-01.png"></p>
