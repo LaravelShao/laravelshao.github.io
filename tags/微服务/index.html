@@ -1,16 +1,21 @@
 extends partial/layout
 
-block site_title
-  != page.tag + " · " + config.title
+block container
+    include mixins/post
+    .archive
+        h2(class='archive-year tagcloud')= 'Tags'
+        - var tagcloudRoot = config.root + "js/tagcloud.js"; var tagcanvasRoot = config.root + "js/tagcanvas.js";
+        script(type='text/javascript', charset='utf-8', src=tagcloudRoot)
+        script(type='text/javascript', charset='utf-8', src=tagcanvasRoot)
+        #myCanvasContainer.widget.tagcloud(align='center')
+            canvas#resCanvas(width='600', height='500', align=center)
+                !=tagcloud()
+            !=tagcloud()
+    +postList()
 
-block description
-  - var desc = '标签：' + page.tag + ' - ' + config.title;
-  meta(name="description", content=desc)
+block pagination
+    include mixins/paginator
+    +home()
 
-block content
-  .autopagerize_page_element: .content
-    .archive.animated.fadeInDown
-      ul.list-with-title
-        include mixins
-        +postList()
-        +make_pager(__('prev'), __('next'))
+block copyright
+    include partial/copyright
